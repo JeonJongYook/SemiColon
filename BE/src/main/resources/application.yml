@@ -1,0 +1,42 @@
+server:
+  address: 0.0.0.0
+  port: 8081
+#  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/snsTest?useSSL=false&characterEncoding=UTF-8
+    username: jgjmysql
+#    password: rhdwjd1968
+    password: Tkdtod1968!
+  mvc:
+    static-path-patten : /static/**
+  resource:
+    static-locations : classpath:/static/
+    add-mapping : true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
+  mail:
+    host: smtp.naver.com
+    port: 465
+    username: jhmjhm0106@naver.com
+    password: junmans2@
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl.enable: true
+          ssl.truth: smtp.naver.com
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  header: Authorization
+  secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
+  access-token-validity-in-seconds: 86400 #하루
+  refresh-token-validity-in-seconds: 604800 #일주일
